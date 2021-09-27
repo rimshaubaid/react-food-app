@@ -1,0 +1,207 @@
+.track-gutter .ins {
+  background: #fff;
+}
+.track-gutter .ins .panel-ember {
+  height: 164px;
+  padding: 10px 60px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .panel-ember {
+    height: 220px;
+    padding: 10px 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .track-gutter .ins .panel-ember .data {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+}
+.track-gutter .ins .panel-ember .control-label {
+  font-weight: 300;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+.track-gutter .ins .panel-ember .form-control-static {
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+}
+.track-gutter .ins .step-list {
+  height: 164px;
+  display: flex;
+  border-top: 8px solid #ececec;
+  border-bottom: 8px solid #ececec;
+}
+@media (min-width: 1024px) {
+  .track-gutter .ins .step-list {
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .step-list {
+    height: auto;
+    padding: 30px 32px;
+    flex-direction: column;
+  }
+}
+.track-gutter .ins .step-list li {
+  position: relative;
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .track-gutter .ins .step-list li {
+    width: 170px;
+    min-width: 170px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .step-list li:not(:last-child) {
+    height: 100px;
+  }
+}
+.track-gutter .ins .step-list li span {
+  color: #bebebe;
+  margin-top: 8px;
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .step-list li span {
+    margin-left: 22px;
+    white-space: nowrap;
+  }
+}
+.track-gutter .ins .step-list li:before {
+  top: -8px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  content: "";
+  position: relative;
+  border-radius: 100px;
+  background: #e6e6e6;
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .step-list li:before {
+    top: 0;
+  }
+}
+.track-gutter .ins .step-list li:after {
+  left: 110px;
+  top: 8px;
+  width: 120px;
+  min-width: 120px;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background: #e6e6e6;
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .step-list li:after {
+    top: 45px;
+    width: 2px;
+    min-width: 2px;
+    height: 46px;
+    left: 18px;
+  }
+}
+.track-gutter .ins .step-list li:last-child:after {
+  display: none;
+}
+.track-gutter .ins .step-list li.active:before {
+  background: #e01e26;
+}
+.track-gutter .ins .step-list li.active span {
+  color: #e01e26;
+}
+@media (min-width: 1024px) {
+  .track-gutter .ins .box .row .col-md-6:first-child {
+    border-right: 8px solid #ececec;
+  }
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .box .row .col-md-6:first-child {
+    border-bottom: 8px solid #ececec;
+  }
+}
+.track-gutter .ins .box .row .col-md-6:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .box .row .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .track-gutter .ins .box .item-box {
+    padding: 40px 80px;
+  }
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .box .item-box {
+    padding: 30px 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .track-gutter .ins .box .item-box .form-group {
+    margin-bottom: 31px;
+  }
+}
+@media (max-width: 1023px) {
+  .track-gutter .ins .box .item-box .form-group {
+    margin-bottom: 26px;
+  }
+}
+.track-gutter .ins .box .item-box .form-group .control-label {
+  font-size: 14px;
+  color: #9a9a9a;
+  display: block;
+  margin-bottom: 10px;
+}
+.track-gutter .ins .box .item-box .form-group .form-control-static {
+  font-weight: 500;
+  font-size: 16px;
+  color: #4b4b4b;
+}
+.track-gutter .ins .box .item-box .form-group .form-control-static span {
+  margin-right: 30px;
+}
+.track-gutter .ins .box .item-box .form-group .form-control-static.disabled {
+  color: #c8c8c8;
+}
+.track-gutter
+  .ins
+  .box
+  .item-box
+  .form-group
+  .form-control-static
+  .form-control-static-call {
+  background: rgba(230, 213, 213, 0.35);
+  border-radius: 5px;
+  font-size: 24px;
+  width: 295px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.track-gutter .ins .box .item-box .form-control-static-call {
+  background: rgba(230, 213, 213, 0.35);
+  border-radius: 5px;
+  font-size: 24px;
+  width: 295px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,29 @@
+.delete-icon {
+  width: 18px;
+  height: 20px;
+  display: block;
+  background: url("../svgs/delete.svg") no-repeat 0 0;
+}
+
+.search-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  background: url("../svgs/search.svg") no-repeat 0 0;
+}
+
+.double-check-icon {
+  width: 48px;
+  height: 34px;
+  display: block;
+  background: url("../svgs/check.svg") no-repeat 0 0;
+}
+
+.close span {
+  width: 20px;
+  height: 22px;
+  display: block;
+  font-size: 0;
+  opacity: 1;
+  background: url("../images/close.png") no-repeat 0 0;
+}

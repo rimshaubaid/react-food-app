@@ -1,0 +1,40 @@
+.img-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 0;
+  font-size: 48px;
+  text-transform: uppercase;
+  color: aliceblue;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-container {
+  margin: 200px 0;
+}
+
+.image-div {
+  background-image: url("../../assets//svgs/about-1.svg");
+  height: 100%;
+  width: 100%;
+}
+
+.image-div2 {
+  background-image: url("../../assets//svgs/about-2.svg");
+  height: 100%;
+  width: 100%;
+}
+
+.gallery {
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #8f8b8b;
+}

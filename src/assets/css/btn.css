@@ -1,0 +1,85 @@
+.btn {
+  font-size: 17px;
+  font-weight: 500;
+  padding: 6px 22px;
+}
+@media (max-width: 767px) {
+  .btn {
+    font-size: 18px;
+  }
+}
+.btn.lg {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 14px 22px;
+}
+@media (max-width: 767px) {
+  .btn.lg {
+    padding: 12px 22px;
+  }
+}
+.btn.xlg {
+  border-radius: 6px;
+  padding: 14px 22px;
+  border-radius: 16px;
+  width: 100%;  
+
+}
+@media (min-width: 768px) {
+  .btn.xlg {
+    font-size: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .btn.xlg {
+    font-size: 18px;
+    padding: 12px 22px;
+  width: 100%;  
+  }
+}
+.btn:not(.outline).primary {
+  color: #fff;
+  background: #e01e26;
+}
+.btn:not(.outline).regular {
+  color: #fff;
+  background: #2fb686;
+}
+.btn:not(.outline).secondry {
+  color: #474747;
+  background: #f1f1f1;
+}
+.btn:not(.outline).hint {
+  padding: 14px;
+  font-size: 14px;
+  color: #464646;
+  background: rgba(224, 30, 38, 0.07);
+}
+.btn.fw-right {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .btn.fw-right {
+    height: 76px;
+  }
+}
+@media (max-width: 767px) {
+  .btn.fw-right {
+    height: 46px;
+  }
+  .btn.fw-right.mt-5 {
+    margin-top: 30px !important;
+    padding-left: 10px;
+    width: 100%;
+  }
+}
+.btn.fw-right i {
+  margin-left: 20px;
+}
+.dummy-btns .btn {
+  white-space: normal;
+}

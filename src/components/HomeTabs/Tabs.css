@@ -1,0 +1,171 @@
+.tab-gutter {
+  background-color: #ececec;
+   
+}
+.tab-gutter .tab-ember.primary {
+  height: 88px;
+  top: 80px;
+  z-index: 3;
+  position: sticky;
+  padding: 0 20px;
+  background: rgba(85, 82, 82, 0.06);
+  background: #e3e3e3;
+}
+
+.activelink{
+ 
+border:2px solid red;
+}
+
+@media (min-width: 768px) {
+  .tab-gutter .tab-ember.primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) {
+  .tab-gutter .tab-ember.primary.mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-gutter .tab-ember.primary.mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    top: 80px;
+    z-index: 9;
+    position: sticky;
+    padding: 0 20px;
+    background: rgba(85, 82, 82, 0.06);
+    background: #e3e3e3;
+  }
+  .tab-gutter .tab-ember.primary.mobile .selected-category {
+    margin-bottom: 0;
+    font-weight: 500;
+
+  }
+  .drop-group button {
+    background: transparent !important;
+    color: black !important;
+    font-weight: 500;
+  }
+  .mycart-dropdown.open .head .btn-primary:not(:disabled):not(.disabled).active,
+  .mycart-dropdown.open .head .btn-primary:not(:disabled):not(.disabled):active,
+  .mycart-dropdown.open .head .show > .btn-primary.dropdown-toggle {
+    background: #e01e26 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .tab-ember > .drop-group > .dropdown > .btn-primary:not(:disabled):not(.disabled).active,
+  .tab-ember > .drop-group > .dropdown > .btn-primary:not(:disabled):not(.disabled):active,
+  .tab-ember > .drop-group > .dropdown > .show > .btn-primary.dropdown-toggle {
+    background: transparent !important;
+    color: #000 !important;
+    
+  }
+  .cu-option {
+    background-color: rgba(0, 0, 0, 1) !important;
+  }
+  .cu-option .dropdown-item {
+    color: #fff;
+    padding: 7px 32px;
+  }
+
+  .tab-gutter .tab-ember.primary.mobile .dropdown-menu {
+    /* inset: auto !important;
+    top: 0px !important;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px; */
+
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px 0px 0px -1px !important;
+    transform: translate3d(-298px, 38px, 0px);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #f6f6f6;
+    box-shadow: none;
+    
+  }
+  .tab-gutter .tab-ember.primary.mobile .dropdown-menu a {
+    width: calc(104vw);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-gutter .tab-ember.primary {
+    display: none;
+  }
+}
+
+.tab-gutter .tab-ember.primary ul.nav {
+  height: 100%;
+  margin: 0 -15px;
+  display: flex;
+  align-items: center;
+}
+.tab-gutter .tab-ember.primary ul.nav > li {
+  height: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+
+.tab-gutter .tab-ember.primary ul.nav > li > button {
+  width: 194px;
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  color: #5c5c5c;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+.tab-gutter .tab-ember.primary ul.nav > li > button.active {
+  color: #fff;
+  background: #d01e12;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+}
+@media (min-width: 500px) {
+  .tab-gutter .tab-ember.primary ul.nav > li.dropdown {
+    padding-left: 30px;
+    margin-left: 30px;
+    border-left: 1px solid #c7c7c7;
+  }
+}
+.tab-gutter .tab-ember.primary ul.nav > li.dropdown .dropdown-menu {
+  min-width: 193px;
+}
+.tab-gutter .tab-ember.primary ul.nav > li.dropdown .dropdown-menu li a {
+  border: 0;
+}
+.tab-gutter .tab-ember.primary ul.nav > li.dropdown a.dropdown-toggle {
+  font-size: 0;
+  position: relative;
+  text-decoration: none;
+  
+}
+.tab-gutter .tab-ember.primary ul.nav > li.dropdown a.dropdown-toggle:before {
+  font-size: 16px;
+  content: "More";
+}
+.tab-gutter .tab-ember.primary ul.nav > li.dropdown a.dropdown-toggle:after {
+  opacity: 0.7;
+  font-size: 20px;
+}

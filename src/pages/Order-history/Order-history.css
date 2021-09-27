@@ -1,0 +1,165 @@
+.order-gutter .accordion .card {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 20px;
+  background: transparent;
+}
+.order-gutter .accordion .card .btn-light {
+  color: #000;;
+  background: #ddd;
+  display: flex;
+  padding: 10px 20px;
+}
+
+.order-gutter .accordion .card .btn-danger {
+  color: #fff;
+  background: #e01e26;
+  display: flex;
+  padding: 10px 20px;
+}
+
+
+.order-gutter .accordion .card .card-header a i {
+  font-size: 20px;
+  color: #686161;
+}
+.order-gutter .accordion .card .card-header a h3 {
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+}
+.order-gutter .accordion .card .card-header a h3 span {
+  margin-right: 20px;
+}
+.order-gutter .accordion .card .card-header a:not(.collapsed) {
+  color: #fff;
+  background: #e01e26;
+}
+.order-gutter .accordion .card .card-header a:not(.collapsed) i {
+  color: #fff;
+}
+.order-gutter .accordion .card .card-header a:not(.collapsed) h3 {
+  color: #fff;
+}
+.order-gutter .accordion .card .card-header a i {
+  margin-left: auto;
+}
+.order-gutter .accordion .card .card-body {
+  padding: 30px 26px;
+  background: #fff;
+}
+@media (min-width: 768px) {
+  .order-gutter .accordion .card .card-body .row {
+    flex-direction: row-reverse;
+  }
+  .order-gutter .accordion .card .card-body .row .col-md-6:first-child {
+    border-left: 1px solid #d7d3d3;
+  }
+}
+@media (min-width: 1024px) {
+  .order-gutter .accordion .card .card-body .item-box .form-group {
+    margin-bottom: 31px;
+  }
+}
+@media (max-width: 1023px) {
+  .order-gutter .accordion .card .card-body .item-box .form-group {
+    margin-bottom: 26px;
+  }
+}
+.order-gutter .accordion .card .card-body .item-box .form-group .control-label {
+  font-size: 14px;
+  color: #9a9a9a;
+  display: block;
+  margin-bottom: 10px;
+}
+.order-gutter
+  .accordion
+  .card
+  .card-body
+  .item-box
+  .form-group
+  .form-control-static {
+  font-weight: 500;
+  font-size: 16px;
+  color: #4b4b4b;
+}
+.order-gutter
+  .accordion
+  .card
+  .card-body
+  .item-box
+  .form-group
+  .form-control-static
+  span {
+  margin-right: 30px;
+}
+.order-gutter
+  .accordion
+  .card
+  .card-body
+  .item-box
+  .form-group
+  .form-control-static.disabled {
+  color: #c8c8c8;
+}
+.order-gutter .accordion .card .card-body .table-box .table {
+  margin-bottom: 36px;
+}
+.order-gutter .accordion .card .card-body .table-box .table tr td {
+  color: #717171;
+  font-weight: 700;
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px dashed rgba(69, 69, 69, 0.25);
+}
+@media (min-width: 1024px) {
+  .order-gutter .accordion .card .card-body .table-box .table tr td {
+    padding: 24px 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .order-gutter .accordion .card .card-body .table-box .table tr td {
+    padding: 14px 6px;
+  }
+}
+.order-gutter .accordion .card .card-body .table-box .table tr td:first-child {
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .order-gutter
+    .accordion
+    .card
+    .card-body
+    .table-box
+    .table
+    tr
+    td:first-child {
+    padding-left: 30px;
+  }
+}
+.order-gutter .accordion .card .card-body .table-box .table tr td:last-child {
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .order-gutter .accordion .card .card-body .table-box .table tr td:last-child {
+    vertical-align: bottom;
+  }
+}
+.order-gutter .accordion .card .card-body .table-box .table tr td span {
+  display: block;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 24px;
+}
+.order-gutter .accordion .card .card-body .table-box .table tr:first-child td {
+  padding-top: 0;
+}
+@media (min-width: 768px) {
+  .order-gutter .form-action {
+    margin-top: -62px;
+  }
+}
+.order-gutter .form-action .btn {
+  padding: 9px 22px;
+}

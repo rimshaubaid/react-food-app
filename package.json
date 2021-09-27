@@ -1,0 +1,70 @@
+{
+  "name": "warley",
+  "homepage": "http://localhost:3000",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
+    "@popperjs/core": "^2.9.2",
+    "@stripe/react-stripe-js": "^1.4.1",
+    "@stripe/stripe-js": "^1.17.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "baseui": "^10.1.0",
+    "bootstrap": "^4.6.0",
+    "css-loader": "^5.2.6",
+    "google-map-react": "^2.1.10",
+    "google-maps-react": "^2.0.6",
+    "i18next": "^20.3.4",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-bootstrap-carousel": "^4.1.1",
+    "react-cool-inview": "^2.0.7",
+    "react-datepicker": "^4.2.1",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.12.1",
+    "react-i18next": "^11.11.3",
+    "react-loading": "^2.0.3",
+    "react-pin-input": "^1.0.1",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-scroll": "^1.8.3",
+    "react-scrollspy": "^3.4.3",
+    "react-time-picker": "^4.4.1",
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^2.0.0",
+    "styletron-engine-atomic": "^1.4.8",
+    "styletron-react": "^6.0.1",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

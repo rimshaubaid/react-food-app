@@ -1,0 +1,123 @@
+/* yha s meri css h - ashwani
+ kuch css common h modals m
+ */
+
+.rounded-lg .modal-content {
+  border-radius: 20px;
+}
+
+.modal-background {
+  background-image: url("/src/assets/svgs/image-3.svg");
+  background-size: cover;
+  height: 350px;
+  margin: 1rem 1rem 0 1rem;
+  border-radius: 16px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  right: 18px;
+  top: 30px;
+  border-radius: 80px;
+  width: 50px;
+  height: 50px;
+}
+
+.warley-description {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #6f6f6f;
+}
+
+.powered {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #a4a4a4;
+}
+
+.input-title {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input {
+  border: 0;
+  background-color: #f1f1f1;
+}
+.input-append {
+  width: 88%;
+}
+.input-full {
+  width: 100%;
+}
+
+.back-heading {
+  height: 42px;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+
+
+
+.claim-button {
+  border-radius: 16px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+@media (max-width: 767px) {
+  .claim {
+    font-size: 24px !important;
+  }
+
+  .sub-claim {
+    font-size: 12px !important;
+  }
+  
+.back-heading{
+  font-size: 19px;
+}
+}
+
+.phone-group .input-group-prepend .form-control {
+  background: #dedede;
+  border-radius: 5.83333px 0px 0px 5.83333px;
+  height: 50px;
+}
+
+.phone-group input {
+  height: 60px;
+  background: #f1f1f1;
+}
+
+.f18 {
+  font-size: 18px;
+}
+
+.f40 {
+  font-size: 40px;
+}
+
+.f20 {
+  font-size: 20px;
+}

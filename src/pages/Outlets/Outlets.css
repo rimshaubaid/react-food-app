@@ -1,0 +1,11 @@
+.map {
+  height: 90%;
+}
+
+.about-content {
+  color: #5c5c5c;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 200%;
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,21 @@
+.btn {
+  font-size: 17px;
+  font-weight: 500;
+  padding: 6px 22px;
+}
+.btn.lg {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 14px 22px;
+}
+.btn:not(.outline).primary {
+  color: #fff;
+  background: #e01e26;
+}
+.btn:not(.outline).hint {
+  padding: 14px;
+  font-size: 14px;
+  color: #464646;
+  background: rgba(224, 30, 38, 0.07);
+}

@@ -1,0 +1,9 @@
+
+RewriteEngine On  
+RewriteCond %{HTTP_HOST} project392.sagarroy\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ http://project392.sagarroy.com/$1 [R,L]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+RewriteRule ^ /index.html [L]

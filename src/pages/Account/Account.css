@@ -1,0 +1,104 @@
+.payment-gutter {
+  position: relative;
+  background: #fff;
+  padding: 60px 40px;
+}
+.payment-gutter .heading {
+  margin-bottom: 22px;
+}
+.payment-gutter .heading h2 {
+  color: #696969;
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.payment-gutter .form-body .box {
+  margin-bottom: 36px;
+}
+.payment-gutter .form-body .control-label {
+  font-size: 14px;
+}
+.payment-gutter .form-body label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.payment-gutter .form-body .form-control {
+  height: 45px;
+}
+.payment-gutter .form-body select.form-control:not([size]):not([multiple]) {
+  height: 45px !important;
+}
+.payment-gutter .details-body {
+  padding: 30px;
+  max-width: 360px;
+  border-radius: 10px;
+  border: 1px solid #fffafa;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.payment-gutter .details-body .close {
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+.payment-gutter .details-body .heading {
+  padding-left: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.payment-gutter .details-body .heading h2 {
+  font-weight: 500;
+}
+.payment-gutter .details-body ul.value-list {
+  margin-bottom: 36px;
+}
+.payment-gutter .details-body ul.value-list li {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+}
+.payment-gutter .details-body ul.value-list li span.txt {
+  min-width: 200px;
+  color: #aeaeae;
+}
+.payment-gutter .details-body ul.value-list li span.value {
+  color: #6c6565;
+}
+.payment-gutter .details-body ul.value-list li.total {
+  margin-top: 22px;
+  height: 76px;
+  border-top: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+  font-weight: 700;
+}
+.payment-gutter .details-body ul.value-list li.total span {
+  color: #201c1c !important;
+}
+.payment-gutter .details-body .data {
+  color: #6c6565;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0 20px;
+}
+.payment-gutter .details-body .data h3 {
+  font-weight: 500;
+  font-size: 16px;
+  color: #cecece;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 40%;
+}
+
+.column1{
+  flex:25%;
+}
+
+.column2{
+  flex:100%
+}
