@@ -74,7 +74,6 @@ const Header = (props) => {
       setLogin(true);
       setClogin(false);
       localStorage.setItem("login", true);
-
       setLshow(false);
       setShow(null);
 
@@ -87,9 +86,9 @@ const Header = (props) => {
       }
       setLoading(true);
     }
-    if (localStorage.order_id && props.auth.isAuthenticated) {
+    /*if (localStorage.order_id && props.auth.isAuthenticated) {
       console.log("Show track order");
-    }
+    }*/
 
     // if (props.auth.isAuthenticated && loaded) {
     //   // console.log("______login header_____");
@@ -180,7 +179,9 @@ const Header = (props) => {
     if (data.password && data.phone && !clLogin) {
       props.loginUser(data, true);
       setClogin(true);
+     
     }
+     
   };
 
   const CloseloggedIn = () => {

@@ -97,7 +97,7 @@ class CartRender extends React.Component {
         html.push(
           <div key={key} className="groups">
             <div className="group">
-              <div className="left">{cdata[key].product_name}</div>
+              <div className="left">{cdata[key].product[0]?cdata[key].product[0].name:cdata[key].product_name}</div>
               <span
                 onClick={() => this.clearCartSingle(cdata[key].id)}
                 className="right"

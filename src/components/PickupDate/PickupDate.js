@@ -5,15 +5,22 @@ import "../../assets/css/modal.css";
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
 import PopUp from "../Modals/Popup";
-
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import TimePicker from 'react-time-picker';
+import DeliveryModal from '../DeliveryModal/DeliveryModal';
 const PickupDate = (props) => {
   let order = props.order;
   let show = props.show;
   const [load, setLoad] = useState(false);
   const [popupText, setPopupText] = useState("");
   const [lshow, setLshow] = useState(false);
-
+  const [startDate,setStartDate] = useState(new Date());
+  const [startTime,setStartTime] = useState('12:00');
+  const [selectAddress,setAddress]=useState(false);
+  const [showDelivery, setShowDelivery] = useState(false);
+  const [showPickup, setShowPickup] = useState(false);
+  const [showPickupDate, setShowPickupDate] = useState(false);
   useEffect(() => {
     // console.log(props);
     if (
@@ -30,17 +37,28 @@ const PickupDate = (props) => {
     }
   }, [props, order, load]);
 
-  const changeDate = (e) => {
+  /*const changeDate = (e) => {
     let oldOrder = order;
     oldOrder["date"] = e.target.value;
     props.setOrder(oldOrder);
     localStorage.setItem("date", e.target.value);
-  };
-  const changeTime = (e) => {
+  };*/
+
+const changeDate = (date) => {
+  setStartDate(date);
+let oldOrder = order;
+oldOrder["date"]=date.toDateString();
+props.setOrder(oldOrder);
+localStorage.setItem("date",date.toDateString());
+  }
+
+  const changeTime = (time) => {
+    setStartTime(time);
     let oldOrder = order;
-    oldOrder["time"] = e.target.value;
+    oldOrder["time"] = time;
     props.setOrder(oldOrder);
-    localStorage.setItem("time", e.target.value);
+    localStorage.setItem("time", time);
+    console.log(time);
   };
 
   const rederDate = () => {
@@ -74,7 +92,10 @@ const PickupDate = (props) => {
     }
     return time;
   };
-
+const showDelivary = () => {
+   
+    setShowDelivery(true);
+  };
   const ProceedOrder = () => {
     let oldData = order;
     // console.log(props.cartId());
@@ -93,7 +114,11 @@ const PickupDate = (props) => {
 
     //props.showTrackOrder();
   };
-
+const pickupDateFunction = () => {
+    setShowPickupDate(true);
+   
+    setShowPickup(false);
+  };
   return (
     <Modal
       show={show}
@@ -123,41 +148,28 @@ const PickupDate = (props) => {
         </button>
       </Modal.Header>
       <Modal.Body className="no">
-        <div className="panel-ember">
-          <label className="control-label">
-            {" "}
-            {props.method === 1 ? "Selected address " : "Selected outlet"}{" "}
-          </label>
-          <span className="btn secondry d-block">
-            {props.method === 1
-              ? props.address
-                ? props.address.u_no +
-                  "," +
-                  props.address.b_name +
-                  "," +
-                  props.address.pcode
-                : "Please select address"
-              : order.out_name}
-          </span>
-        </div>
+        
         <div className="pdbrd">
           <label className="control-label no">
             Select your {props.method === 1 ? 'delivery' : 'pick up'} <span>Date</span>
           </label>
 
-          <select className="form-control" onChange={changeDate}>
+         {/* <select className="form-control" onChange={changeDate}>
             <option>Select Date</option>
             {rederDate()}
-          </select>
+          </select>*/}
+
+          <DatePicker className="form-control" selected={startDate} onChange={changeDate} />
         </div>
         <div className="pdbrd no">
           <label className="control-label no">
             Select your {props.method === 1 ? 'delivery' : 'pick up'} <span>Time</span>
           </label>
-          <select className="form-control" onChange={changeTime}>
+         <TimePicker className="form-control" value={startTime} onChange={changeTime} />
+        {/*<select className="form-control" onChange={changeTime}>
             <option>Select time</option>
             {rederTime()}
-          </select>
+          </select>*/}
         </div>
       </Modal.Body>
       <Modal.Footer className="form-action no">

@@ -7,13 +7,13 @@ import axios from 'axios';
 import OutletsMap from './OutletsMap';
 
 const authURL = process.env.REACT_APP_API_BASE_URL;
-
+var dataOutlets;
 var names=[];
 var length1;
-var latPoints=[];
-var lngPoints=[];
+
   axios.get(authURL + 'outlets')
   .then(res => {
+    dataOutlets=res.data;
     length1=res.data.data.length;
     console.log(res.data);
     for(var i=0;i<res.data.data.length;i++){
@@ -30,7 +30,7 @@ const Outlets = () => {
     <div className="main_section">
       <div className="map">
         
-        <OutletsMap />
+        <OutletsMap doutlets={dataOutlets}/>
       </div>
       <div className="row" style={{ margin: "auto" }}>
         <div className="col-12 col-md-9 p-5">
@@ -47,7 +47,7 @@ const Outlets = () => {
           </div>
         </div>
       </div>
-      <OutletDescription lengthh={length1} name={names}/>
+      <OutletDescription  lengthh={length1} name={names}/>
     </div>
   );
 };

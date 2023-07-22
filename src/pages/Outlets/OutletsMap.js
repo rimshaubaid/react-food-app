@@ -13,6 +13,23 @@ const AnyReactComponent = ({ text }) => <div style={{
     transform: 'translate(-50%, -50%)'
   }}>{text}</div>;
 
+const renderMarkers = () => {
+    
+    let html = [];
+
+     {
+      let data =this.props.doutlets;
+
+      Object.keys(data).forEach(function (key) {
+        html.push(
+          <div>
+           hi
+         </div> 
+        );
+      });
+    }
+    return html;
+  };
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
@@ -21,22 +38,26 @@ class SimpleMap extends Component {
     },
     zoom: 4
   };
-
+  
   render() {
     return (
+      
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
+
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyCYSe88Tj9SKG9fM_6e9j03R1Rmob685pU'}}
           defaultCenter={{lat:13.3139843,lng:121.5640535}}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+        
+       <AnyReactComponent
         
             lat={1.3169018}
             lng={103.6967477}
             text="RoofTop Outlet"
           />
+         
 
           <AnyReactComponent
           

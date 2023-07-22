@@ -111,7 +111,7 @@ const ChooseModal = (props) => {
       b.push(data);
       localStorage.setItem("cart", JSON.stringify(b));
     }
-
+    console.log("cart local data",b);
     props.cartLocal(b);
   };
 

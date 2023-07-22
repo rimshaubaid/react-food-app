@@ -41,7 +41,7 @@ const OrderItem = (props) => {
                     <h3>{data && data[key].name}</h3>
                     {/* <h4>Online Exclusive</h4> */}
                   </div>
-                  <div className="dec">
+                  <div className="dec" >
                     <p>{data && data[key].detail}</p>
                   </div>
                   <div className="action">

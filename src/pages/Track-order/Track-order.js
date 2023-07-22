@@ -10,10 +10,13 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 
 const TrackOrder = (props) => {
+  const authURL = process.env.REACT_APP_API_BASE_URL;
   const [order, setOrder] = useState(null);
   const [load, setLoad] = useState(false);
   const [orderRefNum,setorderRefNum]=useState(null);
   const [driver,setDriver]=useState(null);
+   const [orderPlaced, setorderPlaced] = useState(false);
+   const [orderStatus,setorderStatus]=useState(null);
   const { id } = useParams();
   const history = useHistory();
   const { register, handleSubmit } = useForm();
@@ -63,19 +66,28 @@ const TrackOrder = (props) => {
     return re_date;
   };
   const onSubmit = (data) => { 
-    
     props.SingleOrder(data.order_id);
-    
     setLoad(true);
+    setorderPlaced(false);
     history.push("/track-order/"+data.order_id);
-axios.get("http://devfood.appvelo.com/api/orders/" + data.order_id)
+    
+    axios.get(authURL + "orders/" + data.order_id)
    .then(res => {
-     console.log(res.data)
+      console.log(res.data)
+  
+      axios.get(authURL + "driversLocation",{params:{orderid:res.data.data[0].order_id,driverid:res.data.data[0].driver_id}})
+   .then(response => {
+         setDriver(true);
+       console.log(driver);
+     console.log(response.data);
+    
+     axios.get(
+       authURL + "orderDetails",{params:{id:res.data.data[0].order_id}})
+       .then(res => console.log(res.data.data.status))
+       .catch(err => console.log(err.response))
+   })
    
-      axios.get("http://devfood.appvelo.com/api/driversLocation",{params:{orderid:res.data.data[0].order_id,driverid:res.data.data[0].driver_id}})
-   .then(response => console.log(response.data))
   }
-
    )
    .catch(err => console.log(err))
    
@@ -94,7 +106,7 @@ axios.get("http://devfood.appvelo.com/api/orders/" + data.order_id)
                 </span>
               </div>
               <a
-                href={order.id && "/order-history"}
+                href={order.id && "/order-history/" + order.id}
                 className="btn primary"
               >
                 View order
@@ -112,7 +124,8 @@ axios.get("http://devfood.appvelo.com/api/orders/" + data.order_id)
                   >
                     <span>Assigning Driver</span>
                   </li>
-                  <li className={order.status === 2 ? "active" : ""}>
+                  {console.log('status',order.status)}
+                  <li className={driver ? "active" : ""}>
                     <span>On Going</span>
                   </li>
                   <li className={order.status === 3 ? "active" : ""}>

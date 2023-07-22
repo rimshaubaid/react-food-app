@@ -18,7 +18,7 @@ const OrderHistory = (props) => {
   const [rorder, setRorder] = useState(-1);
   const { id } = useParams();
   const history = useHistory();
-  
+  console.log(props);
   useEffect(() => {
     if (
       !props.loading &&
@@ -28,7 +28,7 @@ const OrderHistory = (props) => {
     ) {
       setOrders(props.reorders.data);
       setLoaded(true);
-      window.location.reload();
+      //window.location.reload();
       //history.push("/order-history/" + rorder);
       //setOrderActive(rorder);
       // alert("Re-Order Successfully!");
@@ -182,7 +182,7 @@ const OrderHistory = (props) => {
                       <div className="form-group">
                         <label className="control-label">
                        
-                          {key.order_type === 1
+                          {key.order_type?key.order_type.id:null === 1
                             ? " Deliver to"
                             : "Pick up from"}
                         </label>
@@ -192,7 +192,7 @@ const OrderHistory = (props) => {
                             : key.d_address && conAddress(key.d_address)}
                         </span>
                       </div>
-                      {key.order_type.id === 1 ? (
+                      {key.order_type?key.order_type.id:null === 1 ? (
                         <div className="form-group">
                           <label className="control-label">
                             Estimated Arrival
@@ -238,7 +238,10 @@ const OrderHistory = (props) => {
                       </div> */}
                     </div>
                   </div>
+                  <br />
                   <div className="col-md-6">
+                  <br />
+                  <br />
                     <div className="form-action t3">
                       {key.status === 0 ? (
                         <input
@@ -247,7 +250,9 @@ const OrderHistory = (props) => {
                           onClick={(e) => reorder(e, key.id)}
                           value="REORDER"
                         />
+                       
                       ) : (
+                         
                         <span>In progress</span>
                       )}
                     </div>

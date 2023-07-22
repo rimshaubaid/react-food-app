@@ -28,7 +28,7 @@ const Signup2 = (props) => {
       //props.closeModal();
       props.ClearState();
     } else if (props.errors && load) {
-      alert(JSON.stringify(props.errors.data));
+      //alert(JSON.stringify(props.errors.data));
       setLoad(false);
       props.ClearState();
     }

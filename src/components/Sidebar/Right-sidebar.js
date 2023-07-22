@@ -34,17 +34,19 @@ const RightSidebar = (props) => {
 
   const [showPickup, setShowPickup] = useState(false);
   const [showPickupDate, setShowPickupDate] = useState(false);
-  const [showtrackOrder, setShowTrackOrder] = useState(false);
-  const [showTrackNow, setShowTracknow] = useState(false);
+  const [flag,setFlag]=useState(0);
   const [order, setOrder] = useState([]);
   const history = useHistory();
   const [showDelivery, setShowDelivery] = useState(false);
   const [lshow, setLshow] = useState(false);
   const [popupText, setPopupText] = useState("");
   const authURL = process.env.REACT_APP_API_BASE_URL;
-  useEffect(() => {
-   
-    if (
+
+  
+  
+   useEffect(() => {
+     
+if (
       props.loading === false &&
       props.add_to_cart &&
       props.add_to_cart.data &&
@@ -61,12 +63,18 @@ const RightSidebar = (props) => {
       Object.keys(props.order.data).length > 0
     ) {
       setorderPlaced(true); 
-      props.closeRightbar();
+      if(flag === 1){
+      history.push({
+      pathname:('/payment'),
+       state:props.add_to_cart 
+    })
+      }
       //history.push("/payment/" + props.order.data.id);
       console.log("order placed!");
-      console.log("method",method);
+      props.closeRightbar();
       axios.post(authURL + "orderPlace")
-      .then(res => console.log('accept this order from dashboard' , res.data.data[0].orderRef))
+      .then(res => {console.log('accept this order from dashboard' , res.data.data[0].orderRef)
+     })
       .catch(err => {
         let error;
         if(err.response && err.response.data){
@@ -77,13 +85,12 @@ const RightSidebar = (props) => {
         console.log(error);
       })
       
-      history.push({
-      pathname:('/payment'),
-       state:props.add_to_cart 
-    })
+      
     }
     
-  }, [method,authURL, history, orderPlaced, props]);
+   
+   })
+    
 
   const clearCart = () => {
     props.clearCart();
@@ -148,7 +155,7 @@ const RightSidebar = (props) => {
 
     if (method === 1) {
       if (address) {
-        
+        console.log('time is',order.time)
         let data = {
           d_address: JSON.stringify(address),
           cart_id: cartId(),
@@ -157,8 +164,9 @@ const RightSidebar = (props) => {
           date: order.date && order.date,
         };
         
-       
+      
         props.placeOrder(data);
+        
         console.log('data is posted in orders')
         setorderPlaced(false);
       } else {
@@ -174,6 +182,7 @@ const RightSidebar = (props) => {
       };
       console.log('data is posted in orders!');
       props.placeOrder(data);
+      
       setorderPlaced(false);
 
       console.log("pickup");
@@ -181,9 +190,9 @@ const RightSidebar = (props) => {
       setPopupText("Select Outlet and time!");
       setLshow(true);
     }
-   
+     
     console.log("ProcessCheckOut");
-    
+   setFlag(1);
   };
 
 
@@ -206,21 +215,8 @@ const RightSidebar = (props) => {
    
     setShowPickup(false);
   };
-  const showTrackOrderNowFunction = () => {
-    setShowTrackOrder(false);
-    setShowTracknow(true);
-  };
-
-  const trackOrderPage = () => {
-    setShowTracknow(true);
-    history.push("/track-order");
-  };
-
-  const trackOrderFunction = () => {
-    //console.log("____Show trackOrderFunction_______");
-    setShowPickupDate(false);
-    setShowTrackOrder(true);
-  };
+  
+  
   const showDelivary = () => {
    
     setShowDelivery(true);
@@ -271,18 +267,6 @@ const RightSidebar = (props) => {
         closeModal={() => setShowPickupDate(false)}
       />
 
-      <TrackOrder
-        show={showtrackOrder}
-        closeModal={() => setShowTrackOrder(false)}
-        trackOrderNow={() => showTrackOrderNowFunction()}
-      />
-
-      <TrackOrderNow
-        show={showTrackNow}
-        closeModal={() => setShowTracknow(false)}
-        trackOrder={() => trackOrderPage()}
-      />
-
       <div className={`mycart-dropdown ${show ? "open" : ""}`} id="myCart">
         <div className="head">
           <Dropdown className="d-none d-sm-block" as={ButtonGroup}>
@@ -328,21 +312,21 @@ const RightSidebar = (props) => {
               <div className="form-group no">
                 <label className="control-label">Delivery Time</label>
                 <div className="row xsm">
-                  <div className="col-5">
+                  <div className="col-6">
                     <span
                       onClick={() => pickupDateFunction()}
                       className="btn secondry d-block f14"
                     >
                     
-                      {order.date ? order.date.slice(0, -4) : "Select date"}
+                      {order.date ? order.date : "Select date"}
                     </span>
                   </div>
-                  <div className="col-7">
+                  <div className="col-6">
                     <span
                       onClick={() => pickupDateFunction()}
                       className="btn secondry d-block f14"
                     >
-                      {order.time ? order.time + " : 00" : "Select Time"}
+                      {order.time ? order.time  : "Select Time"}
                     </span>
                   </div>
                 </div>
@@ -369,7 +353,7 @@ const RightSidebar = (props) => {
                       onClick={() => pickupDateFunction()}
                       className="btn secondry d-block f14"
                     >
-                      {order.date ? order.date.slice(0, -4) : "Select date"}
+                      {order.date ? order.date : "Select date"}
                     </span>
                   </div>
                   <div className="col-7">
@@ -377,7 +361,7 @@ const RightSidebar = (props) => {
                       onClick={() => pickupDateFunction()}
                       className="btn secondry d-block f14"
                     >
-                      {order.time ? order.time + " : 00" : "Select Time"}
+                      {order.time ? order.time  : "Select Time"}
                     </span>
                   </div>
                 </div>
@@ -429,13 +413,16 @@ const RightSidebar = (props) => {
               <tbody>
                 <tr>
                   <td>Sub Total:</td>
-                  <td>{props.add_to_cart? props.add_to_cart.data.sub:''}</td>
+                  <td>${props.add_to_cart  ?  ""
+                  : 0} {props.add_to_cart? props.add_to_cart.data.sub:''}</td>
                   
                   
                 </tr>
                 <tr>
                   <td>Delivery charge:</td>
                   <td>
+                  ${props.add_to_cart  ?  ""
+                  : 0}
                     {method === 1
                       ? props.add_to_cart && props.add_to_cart.data.d_charge
                       : 0}
@@ -443,7 +430,9 @@ const RightSidebar = (props) => {
                 </tr>
                 <tr>
                   <td>GST</td>
-                  <td>{props.add_to_cart && props.add_to_cart.data.gst}</td>
+                  <td>
+                  ${props.add_to_cart  ?  ""
+                  : 0} {props.add_to_cart && props.add_to_cart.data.gst}</td>
                 </tr>
               </tbody>
             </table>
@@ -460,16 +449,19 @@ const RightSidebar = (props) => {
             <button
               onClick={() => {
                 ProcessCheckOut();
+                
               }}
               className="btn primary"
             >
               <span>Check out</span>
               <span>|</span>
               <span>
-                ${" "}
+             
+                ${props.add_to_cart  ?  ""
+                  : 0}
                 {method === 1
-                  ? props.add_to_cart && props.add_to_cart.data.sum
-                  :  props.add_to_cart &&
+                  ?  props.add_to_cart && props.add_to_cart.data.sum
+                  : props.add_to_cart &&
                     parseFloat(props.add_to_cart.data.sub) +
                       parseFloat(props.add_to_cart.data.gst)}
               </span>

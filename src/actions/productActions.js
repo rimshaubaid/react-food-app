@@ -41,7 +41,9 @@ export const submitPayment = (data) => (dispatch) => {
         payload: res.data,
       })
     )
-    .catch((err) => dispatch(getError(err)));
+    .catch((err) => {
+      console.log(err.response);
+      dispatch(getError(err))});
 };
 
 export const ClearState = () => (dispatch) => {
@@ -198,7 +200,9 @@ export const cartLocal = (data) => (dispatch) => {
         payload: res.data,
       });
     })
-    .catch((err) => dispatch(getError(err)));
+    .catch((err) => {
+      console.log(err.response);
+      dispatch(getError(err))});
 
 }
 export const addTocart = (data) => (dispatch) => {
@@ -211,7 +215,9 @@ export const addTocart = (data) => (dispatch) => {
         payload: res.data.data ? res.data.data : null,
       });
     })
-    .catch((err) => dispatch(getError(err)));
+    .catch((err) => {
+      console.log(err.response);
+      dispatch(getError(err))});
 };
 
 export const getProductsByCategory = (categoryID) => (dispatch) => {

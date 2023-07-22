@@ -39,7 +39,7 @@ const App = () => {
           <PublicRoute exact path="/account" component={Account} />
           <PublicRoute exact path="/promo" component={Promo} />
           <PublicRoute exact path="/stripe" component={StripePayment} />
-         
+          
        <PublicRoute
             exact
             path="/order-history/:id?"
@@ -50,7 +50,7 @@ const App = () => {
             path="/track-order/:id?"
             component={TrackOrder}
           />
-
+     
           {routesKeys.map((key) => {
             return (
               <PublicRoute

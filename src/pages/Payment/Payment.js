@@ -26,7 +26,7 @@ const Payment = (props) => {
   const [user, setUser] = useState([]);
   const [udata, setUdata] = useState(false);
   const [showOrderPlaced, setShowOrderPlaced] = useState(false);
-
+  const authURL = process.env.REACT_APP_API_BASE_URL;
   const [showtrackOrder, setShowTrackOrder] = useState(false);
   const [showTrackNow, setShowTracknow] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -57,7 +57,7 @@ const Payment = (props) => {
     } else {
       props.submitPayment({ ...data, local });
       if(orderType === 1){
-      axios.post("http://devfood.appvelo.com/api/orderPlace")
+      axios.post(authURL+"orderPlace")
       .then(res => console.log("accept this order from dashboard",res.data.data[0].orderRef))
       .catch(err => console.log(err.response))
     }}
@@ -67,7 +67,7 @@ const Payment = (props) => {
   };
 
   useEffect(() => {
-    
+   
     
     if (
       !props.loading &&
@@ -120,7 +120,7 @@ const Payment = (props) => {
       localStorage.setItem("order_id", props.payment.data.id);
       setLoaded(false);
       setOrders(props.payment.data);
-      props.updateCart(null);
+      //props.updateCart(null);
       console.log('update cart call from payment');
       //history.push("/");
       

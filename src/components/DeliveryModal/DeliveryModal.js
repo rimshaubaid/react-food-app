@@ -61,7 +61,7 @@ const DeliveryModal = ({loginRef, showPickupDate, setAddress, show, closeModal }
           <div className="form-group">
             <label className="control-label">Postal Code</label>
             <div className="search-box">
-              <i className="search-icon"></i>
+              
               <input
                 className="form-control"
                 type="search"

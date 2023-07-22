@@ -86,7 +86,7 @@ img {
 
 a.carousel-control-prev {
   background: #000;
-  opacity: 0.5;
+  opacity: 0;
   height: 120px;
   width: 64px;
   top: 0;
@@ -96,7 +96,7 @@ a.carousel-control-prev {
 }
 a.carousel-control-next {
   background: #000;
-  opacity: 0.5;
+  opacity: 0;
   height: 120px;
   width: 64px;
   top: 0;

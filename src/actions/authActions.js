@@ -2,7 +2,7 @@ import axios from "axios";
 import { SET_CURRENT_USER,CLEAR_STATE, GET_ERRORS } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 import { setLoading } from "./commonActions";
-const authURL = process.env.REACT_APP_API_AUTH_URL;
+const authURL = process.env.REACT_APP_API_BASE_URL;
 const client_id = process.env.REACT_APP_OAUTH_CLIENT_ID;
 const secret = process.env.REACT_APP_OAUTH_SECRET_KEY;
 
@@ -19,7 +19,7 @@ export const loginUser = (userData, shouldRefresh) => (dispatch) => {
   dispatch(setLoading());
   axios
     .post(
-      authURL,
+      authURL + "login",
       userData === null && shouldRefresh ? refreshTokenData : userData,
       {
         headers: {
@@ -29,8 +29,6 @@ export const loginUser = (userData, shouldRefresh) => (dispatch) => {
     )
     .then((res) => {
       var data = res.data;
-   
-
       var d = new Date();
       var n = d.getTime();
       data["created_at"] = n;
@@ -45,6 +43,7 @@ export const loginUser = (userData, shouldRefresh) => (dispatch) => {
       } else {
         error = null;
       }
+      console.log(error);
       dispatch(sendError(error));
     });
 
